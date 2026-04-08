@@ -1,0 +1,39 @@
+---
+interface Props {
+  icon: string;
+  title: string;
+  description: string;
+}
+
+const { icon, title, description } = Astro.props;
+---
+
+<div class="feature">
+  <div class="feature__icon">{icon}</div>
+  <h3 class="feature__title">{title}</h3>
+  <p class="feature__desc">{description}</p>
+</div>
+
+<style>
+  .feature {
+    text-align: center;
+    padding: var(--space-xl);
+  }
+
+  .feature__icon {
+    font-size: 2.5rem;
+    margin-bottom: var(--space-md);
+  }
+
+  .feature__title {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--space-md);
+  }
+
+  .feature__desc {
+    color: var(--color-text-light);
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-normal);
+  }
+</style>

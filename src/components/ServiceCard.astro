@@ -1,0 +1,69 @@
+---
+interface Props {
+  icon: string;
+  title: string;
+  description: string;
+  price?: string;
+  accent?: string;
+}
+
+const { icon, title, description, price, accent = 'var(--color-primary-light)' } = Astro.props;
+---
+
+<div class="card" style={`--card-accent: ${accent}`}>
+  <div class="card__accent"></div>
+  <div class="card__icon">{icon}</div>
+  <h3 class="card__title">{title}</h3>
+  <p class="card__desc">{description}</p>
+  {price && <p class="card__price">{price}</p>}
+</div>
+
+<style>
+  .card {
+    background: var(--color-white);
+    border-radius: var(--border-radius-lg);
+    padding: var(--space-xl) var(--space-xl) var(--space-lg);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .card__accent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--card-accent);
+  }
+
+  .card__icon {
+    font-size: 2rem;
+    margin-bottom: var(--space-md);
+  }
+
+  .card__title {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--space-sm);
+  }
+
+  .card__desc {
+    color: var(--color-text-light);
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-normal);
+    margin-bottom: var(--space-md);
+  }
+
+  .card__price {
+    font-weight: 700;
+    color: var(--color-primary-dark);
+    font-size: var(--font-size-base);
+  }
+</style>

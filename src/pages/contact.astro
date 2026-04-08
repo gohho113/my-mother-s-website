@@ -1,0 +1,136 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import ContactForm from '../components/ContactForm.astro';
+---
+
+<BaseLayout title="お問い合わせ" description="お問い合わせ・ご予約はこちらから｜Mizuho Rainbow｜岩手県宮古市">
+
+  <Hero
+    title="お問い合わせ"
+    subtitle="お気軽にご相談ください"
+  />
+
+  <!-- フォーム -->
+  <section class="section">
+    <div class="container">
+      <SectionHeading title="お問い合わせフォーム" subtitle="ご予約・ご質問などお気軽にどうぞ" />
+      <ContactForm />
+    </div>
+  </section>
+
+  <!-- サロン情報 -->
+  <section class="section section--alt">
+    <div class="container">
+      <SectionHeading title="サロン情報" />
+      <div class="info-grid">
+        <div class="info-card">
+          <h3 class="info-card__title">📍 所在地</h3>
+          <p>岩手県宮古市</p>
+          <p class="info-note">※詳しい住所はご予約時にお伝えします</p>
+        </div>
+        <div class="info-card">
+          <h3 class="info-card__title">🕐 営業時間</h3>
+          <p>10:00 〜 17:00</p>
+          <p class="info-note">※完全予約制</p>
+        </div>
+        <div class="info-card">
+          <h3 class="info-card__title">📱 SNS</h3>
+          <p>
+            <a href="https://www.instagram.com/smile7rainbow/" target="_blank" rel="noopener noreferrer">
+              Instagram: @smile7rainbow
+            </a>
+          </p>
+          <p class="info-note">DM でもお気軽にどうぞ</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 地図プレースホルダー -->
+  <section class="section">
+    <div class="container">
+      <SectionHeading title="アクセス" />
+      <div class="map-placeholder">
+        <p>🗺️ Google Map をここに埋め込み予定</p>
+        <p class="map-note">岩手県宮古市周辺</p>
+      </div>
+      <div class="access-info container--narrow">
+        <p>※アクセスの詳細は、ご予約確定後にお知らせいたします。</p>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-xl);
+  }
+
+  .info-card {
+    background: var(--color-white);
+    border-radius: var(--border-radius-lg);
+    padding: var(--space-xl);
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .info-card__title {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--space-md);
+  }
+
+  .info-card p {
+    font-size: var(--font-size-base);
+    margin-bottom: var(--space-sm);
+  }
+
+  .info-card a {
+    color: var(--color-primary-dark);
+    font-weight: 500;
+  }
+
+  .info-card a:hover {
+    color: var(--color-primary);
+  }
+
+  .info-note {
+    color: var(--color-text-light);
+    font-size: var(--font-size-sm) !important;
+  }
+
+  .map-placeholder {
+    background: var(--color-bg-alt);
+    border: 2px dashed var(--color-border);
+    border-radius: var(--border-radius-lg);
+    padding: var(--space-4xl) var(--space-xl);
+    text-align: center;
+    color: var(--color-text-light);
+  }
+
+  .map-placeholder p:first-child {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--space-sm);
+  }
+
+  .map-note {
+    font-size: var(--font-size-sm);
+  }
+
+  .access-info {
+    text-align: center;
+    margin-top: var(--space-xl);
+    color: var(--color-text-light);
+  }
+
+  @media (max-width: 768px) {
+    .info-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

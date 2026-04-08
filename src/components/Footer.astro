@@ -1,0 +1,99 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="footer__rainbow"></div>
+  <div class="footer__inner container">
+    <div class="footer__brand">
+      <span class="footer__logo">🌈 Mizuho Rainbow</span>
+      <p class="footer__tagline">色の力で、心に寄り添う</p>
+    </div>
+    <nav class="footer__nav">
+      <a href="/">ホーム</a>
+      <a href="/services/">サービス</a>
+      <a href="/about/">プロフィール</a>
+      <a href="/contact/">お問い合わせ</a>
+    </nav>
+    <div class="footer__social">
+      <a href="https://www.instagram.com/smile7rainbow/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+        Instagram
+      </a>
+    </div>
+    <p class="footer__copy">&copy; {currentYear} Mizuho Rainbow. All rights reserved.</p>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: var(--color-bg-alt);
+    padding: var(--space-3xl) 0 var(--space-xl);
+    margin-top: var(--space-3xl);
+  }
+
+  .footer__rainbow {
+    height: 3px;
+    background: var(--gradient-rainbow);
+    margin-bottom: var(--space-3xl);
+  }
+
+  .footer__inner {
+    text-align: center;
+  }
+
+  .footer__logo {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    color: var(--color-primary-dark);
+  }
+
+  .footer__tagline {
+    color: var(--color-text-light);
+    font-size: var(--font-size-sm);
+    margin-top: var(--space-xs);
+  }
+
+  .footer__nav {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-xl);
+    margin: var(--space-xl) 0;
+    flex-wrap: wrap;
+  }
+
+  .footer__nav a {
+    color: var(--color-text-light);
+    font-size: var(--font-size-sm);
+    transition: color var(--transition);
+  }
+
+  .footer__nav a:hover {
+    color: var(--color-primary);
+  }
+
+  .footer__social {
+    margin-bottom: var(--space-xl);
+  }
+
+  .footer__social a {
+    display: inline-block;
+    padding: var(--space-sm) var(--space-lg);
+    border: 1px solid var(--color-border);
+    border-radius: 50px;
+    color: var(--color-text-light);
+    font-size: var(--font-size-sm);
+    transition: all var(--transition);
+  }
+
+  .footer__social a:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+  }
+
+  .footer__copy {
+    color: var(--color-text-light);
+    font-size: var(--font-size-sm);
+    opacity: 0.7;
+  }
+</style>

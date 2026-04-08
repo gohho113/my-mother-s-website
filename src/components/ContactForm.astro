@@ -1,0 +1,115 @@
+<form class="form" action="#" method="POST">
+  <div class="form__group">
+    <label class="form__label" for="name">お名前 <span class="form__required">必須</span></label>
+    <input class="form__input" type="text" id="name" name="name" required placeholder="例：山田 花子" />
+  </div>
+  <div class="form__group">
+    <label class="form__label" for="email">メールアドレス <span class="form__required">必須</span></label>
+    <input class="form__input" type="email" id="email" name="email" required placeholder="例：example@email.com" />
+  </div>
+  <div class="form__group">
+    <label class="form__label" for="phone">電話番号 <span class="form__optional">任意</span></label>
+    <input class="form__input" type="tel" id="phone" name="phone" placeholder="例：090-1234-5678" />
+  </div>
+  <div class="form__group">
+    <label class="form__label" for="subject">ご相談内容</label>
+    <select class="form__input" id="subject" name="subject">
+      <option value="">お選びください</option>
+      <option value="color-therapy">カラーセラピーについて</option>
+      <option value="counseling">心理カウンセリングについて</option>
+      <option value="baby-massage">ベビーキッズマッサージについて</option>
+      <option value="space-mom">space♡mom について</option>
+      <option value="other">その他</option>
+    </select>
+  </div>
+  <div class="form__group">
+    <label class="form__label" for="message">メッセージ <span class="form__required">必須</span></label>
+    <textarea class="form__input form__textarea" id="message" name="message" required rows="6" placeholder="お気軽にご相談内容をご記入ください"></textarea>
+  </div>
+  <div class="form__submit">
+    <button type="submit" class="btn btn--primary">送信する</button>
+  </div>
+</form>
+
+<style>
+  .form {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .form__group {
+    margin-bottom: var(--space-xl);
+  }
+
+  .form__label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: var(--space-sm);
+    font-size: var(--font-size-sm);
+  }
+
+  .form__required {
+    background: var(--color-accent-rose);
+    color: var(--color-white);
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 50px;
+    margin-left: var(--space-xs);
+    font-weight: 500;
+  }
+
+  .form__optional {
+    background: var(--color-border);
+    color: var(--color-text-light);
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 50px;
+    margin-left: var(--space-xs);
+    font-weight: 500;
+  }
+
+  .form__input {
+    width: 100%;
+    padding: var(--space-md);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    font-family: var(--font-body);
+    font-size: var(--font-size-base);
+    color: var(--color-text);
+    background: var(--color-white);
+    transition: border-color var(--transition), box-shadow var(--transition);
+    appearance: none;
+  }
+
+  .form__input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(183, 132, 167, 0.15);
+  }
+
+  .form__input::placeholder {
+    color: var(--color-border);
+  }
+
+  .form__textarea {
+    resize: vertical;
+    min-height: 150px;
+  }
+
+  select.form__input {
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237A7A7A' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    padding-right: 40px;
+  }
+
+  .form__submit {
+    text-align: center;
+    margin-top: var(--space-2xl);
+  }
+
+  .form__submit .btn {
+    min-width: 200px;
+  }
+</style>

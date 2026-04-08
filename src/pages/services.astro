@@ -1,0 +1,163 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+---
+
+<BaseLayout title="サービス紹介" description="カラーセラピー・心理カウンセリング・ベビーキッズマッサージなどのサービス紹介｜Mizuho Rainbow">
+
+  <Hero
+    title="サービス紹介"
+    subtitle="あなたに合った癒しのメニューをお選びください"
+  />
+
+  <!-- メインサービス -->
+  <section class="section">
+    <div class="container">
+      <SectionHeading title="メニュー一覧" />
+      <div class="services-grid">
+        <ServiceCard
+          icon="🎨"
+          title="カラーセラピー"
+          description="色彩の持つエネルギーを活用し、心の状態を映し出します。直感で選んだ色から、潜在意識のメッセージを読み解き、自己理解を深めるセッションです。"
+          price="※料金はお問い合わせください"
+          accent="var(--color-primary-light)"
+        />
+        <ServiceCard
+          icon="💬"
+          title="心理カウンセリング"
+          description="日々のストレス、子育ての悩み、人間関係、自分自身のこと。安心できるプライベートな空間で、ゆっくりとお話をお聴きします。一人で抱え込まないでくださいね。"
+          price="※料金はお問い合わせください"
+          accent="var(--color-secondary-light)"
+        />
+        <ServiceCard
+          icon="👶"
+          title="ベビーキッズマッサージ"
+          description="赤ちゃんやお子さまとのスキンシップを通じて、親子の絆を深めるマッサージの方法をお伝えします。お子さまの発達促進やリラックスにも効果的です。"
+          price="※料金はお問い合わせください"
+          accent="var(--color-accent-warm)"
+        />
+        <ServiceCard
+          icon="🤝"
+          title="親子サポート（space♡mom）"
+          description="同じ悩みを持つママたちが集まり、情報交換や交流ができるコミュニティです。一人じゃないと感じられる、温かい居場所を提供しています。"
+          price="詳細はInstagramをご確認ください"
+          accent="var(--color-accent-rose)"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- セッションの流れ -->
+  <section class="section section--alt">
+    <div class="container container--narrow">
+      <SectionHeading title="セッションの流れ" subtitle="はじめての方もご安心ください" />
+      <div class="flow">
+        <div class="flow__step">
+          <div class="flow__number">1</div>
+          <div class="flow__content">
+            <h3>ご予約・お問い合わせ</h3>
+            <p>お問い合わせフォームまたはInstagramのDMからお気軽にご連絡ください。ご希望の日時を調整いたします。</p>
+          </div>
+        </div>
+        <div class="flow__step">
+          <div class="flow__number">2</div>
+          <div class="flow__content">
+            <h3>カウンセリング</h3>
+            <p>まずはゆっくりとお話をお聴きします。今のお気持ちやお悩み、気になっていることをお聞かせください。</p>
+          </div>
+        </div>
+        <div class="flow__step">
+          <div class="flow__number">3</div>
+          <div class="flow__content">
+            <h3>セッション</h3>
+            <p>ご要望に合わせたセラピーを行います。カラーセラピーの場合は、直感で色をお選びいただきます。</p>
+          </div>
+        </div>
+        <div class="flow__step">
+          <div class="flow__number">4</div>
+          <div class="flow__content">
+            <h3>フィードバック</h3>
+            <p>セッションの振り返りを行い、日常に活かせるアドバイスをお伝えします。</p>
+          </div>
+        </div>
+        <div class="flow__step">
+          <div class="flow__number">5</div>
+          <div class="flow__content">
+            <h3>アフターフォロー</h3>
+            <p>セッション後のご質問やご相談にも対応いたします。継続的なサポートも可能です。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section">
+    <div class="container text-center">
+      <SectionHeading title="まずはお気軽にご相談ください" />
+      <p class="cta-text">どのメニューが合うか分からない場合も、<br />お気軽にお問い合わせください。一緒に最適なメニューを考えましょう。</p>
+      <a href="/contact/" class="btn btn--primary">お問い合わせはこちら</a>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-xl);
+  }
+
+  .flow {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+  }
+
+  .flow__step {
+    display: flex;
+    gap: var(--space-lg);
+    align-items: flex-start;
+  }
+
+  .flow__number {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--gradient-rainbow);
+    color: var(--color-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-heading);
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+  }
+
+  .flow__content h3 {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--space-xs);
+  }
+
+  .flow__content p {
+    color: var(--color-text-light);
+    font-size: var(--font-size-sm);
+  }
+
+  .cta-text {
+    color: var(--color-text-light);
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--space-xl);
+  }
+
+  @media (max-width: 768px) {
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

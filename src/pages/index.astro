@@ -1,0 +1,153 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import FeatureItem from '../components/FeatureItem.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+---
+
+<BaseLayout title="ホーム" description="Mizuho Rainbow｜カラーセラピー・心理カウンセリング・ベビーキッズマッサージ｜岩手県宮古市">
+
+  <Hero
+    title="色の力で、心に寄り添う"
+    subtitle="カラーセラピーと心理カウンセリングを通じて、あなたらしい輝きを取り戻すお手伝いをします"
+    ctaText="サービスを見る"
+    ctaHref="/services/"
+  />
+
+  <!-- ご挨拶 -->
+  <section class="section">
+    <div class="container container--narrow text-center">
+      <SectionHeading title="はじめまして" />
+      <p class="intro-text">
+        岩手県宮古市を拠点に活動している <strong>Mizuho Rainbow</strong> です。<br />
+        カラーセラピスト・心理カウンセラーとして、色彩の持つ力を通じて<br class="hide-sp" />
+        心と体のバランスを整えるお手伝いをしています。
+      </p>
+      <p class="intro-text">
+        自身も極超低体重出生児の母、障がい児の母としての経験を持ち、<br class="hide-sp" />
+        同じ悩みを抱えるお母さんたちに寄り添いたいという想いで活動しています。
+      </p>
+    </div>
+  </section>
+
+  <!-- 選ばれる理由 -->
+  <section class="section section--alt">
+    <div class="container">
+      <SectionHeading title="選ばれる3つの理由" />
+      <div class="features-grid">
+        <FeatureItem
+          icon="🎨"
+          title="色彩を通じた心のケア"
+          description="色の持つエネルギーとメッセージを活かし、言葉だけでは届かない心の奥にそっと寄り添います。"
+        />
+        <FeatureItem
+          icon="💝"
+          title="ママに寄り添う温かさ"
+          description="子育てに悩むママの気持ちに、自身の経験を重ねながら心からの共感とサポートを届けます。"
+        />
+        <FeatureItem
+          icon="🌈"
+          title="多彩な資格と経験"
+          description="カラーセラピー、心理カウンセリング、ベビーマッサージなど、幅広い専門知識で一人ひとりに合った支援を行います。"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- サービスプレビュー -->
+  <section class="section">
+    <div class="container">
+      <SectionHeading title="サービス" subtitle="心と体に寄り添う多彩なメニュー" />
+      <div class="services-grid">
+        <ServiceCard
+          icon="🎨"
+          title="カラーセラピー"
+          description="直感で選んだ色から、今のあなたの心の状態やメッセージを読み解きます。自分自身を深く理解するきっかけに。"
+          accent="var(--color-primary-light)"
+        />
+        <ServiceCard
+          icon="💬"
+          title="心理カウンセリング"
+          description="日々のストレスや子育ての悩み、人間関係など、安心できる空間でじっくりお話をお聴きします。"
+          accent="var(--color-secondary-light)"
+        />
+        <ServiceCard
+          icon="👶"
+          title="ベビーキッズマッサージ"
+          description="親子のスキンシップを通じて、赤ちゃん・お子さまとの絆を深めるマッサージをお伝えします。"
+          accent="var(--color-accent-warm)"
+        />
+      </div>
+      <div class="text-center" style="margin-top: var(--space-2xl);">
+        <a href="/services/" class="btn btn--outline">すべてのサービスを見る</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container text-center">
+      <h2 class="cta-title">お気軽にご相談ください</h2>
+      <p class="cta-text">色のことも、心のことも、子育てのことも。<br />まずはお話からはじめましょう。</p>
+      <a href="/contact/" class="btn btn--primary">お問い合わせはこちら</a>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .intro-text {
+    font-size: var(--font-size-lg);
+    color: var(--color-text);
+    margin-bottom: var(--space-lg);
+    line-height: 2;
+  }
+
+  .intro-text:last-child {
+    margin-bottom: 0;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-xl);
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-xl);
+  }
+
+  .cta-section {
+    background: var(--gradient-hero);
+    padding: var(--space-4xl) 0;
+  }
+
+  .cta-title {
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--space-md);
+  }
+
+  .cta-text {
+    color: var(--color-text-light);
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--space-xl);
+  }
+
+  .hide-sp {
+    display: inline;
+  }
+
+  @media (max-width: 768px) {
+    .features-grid,
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .hide-sp {
+      display: none;
+    }
+  }
+</style>

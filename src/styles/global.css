@@ -1,0 +1,194 @@
+/* ===========================
+   Design Tokens
+   =========================== */
+:root {
+  /* Rainbow-inspired warm palette */
+  --color-primary: #B784A7;
+  --color-primary-light: #D4B5C9;
+  --color-primary-dark: #9A6B8E;
+  --color-secondary: #7EB5A6;
+  --color-secondary-light: #A8D4C8;
+  --color-accent-warm: #E8C4A0;
+  --color-accent-rose: #E8A0B0;
+  --color-accent-gold: #D4C491;
+  --color-accent-sky: #A0C8E8;
+
+  --color-bg: #FDFBF9;
+  --color-bg-alt: #F5F0EB;
+  --color-text: #4A4A4A;
+  --color-text-light: #7A7A7A;
+  --color-white: #FFFFFF;
+  --color-border: #E8E2DC;
+
+  /* Rainbow gradient */
+  --gradient-rainbow: linear-gradient(135deg, #E8A0B0 0%, #E8C4A0 20%, #D4C491 40%, #7EB5A6 60%, #A0C8E8 80%, #B784A7 100%);
+  --gradient-hero: linear-gradient(160deg, #FDF6F8 0%, #FBF5EE 30%, #F0F7F5 60%, #F5F0FA 100%);
+
+  /* Typography */
+  --font-body: 'Noto Sans JP', sans-serif;
+  --font-heading: 'Noto Serif JP', serif;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.5rem;
+  --font-size-2xl: 2rem;
+  --font-size-3xl: 2.5rem;
+  --font-size-hero: 3rem;
+  --line-height-normal: 1.8;
+  --line-height-tight: 1.4;
+
+  /* Spacing */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+  --space-4xl: 6rem;
+
+  /* Layout */
+  --max-width: 1100px;
+  --max-width-narrow: 800px;
+  --border-radius: 12px;
+  --border-radius-lg: 20px;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+  --transition: 0.3s ease;
+}
+
+/* ===========================
+   Reset & Base
+   =========================== */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  line-height: var(--line-height-tight);
+  color: var(--color-text);
+}
+
+a {
+  color: var(--color-primary-dark);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+a:hover {
+  color: var(--color-primary);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ===========================
+   Utility Classes
+   =========================== */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+.container--narrow {
+  max-width: var(--max-width-narrow);
+}
+
+.section {
+  padding: var(--space-3xl) 0;
+}
+
+.section--alt {
+  background-color: var(--color-bg-alt);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.rainbow-line {
+  width: 60px;
+  height: 3px;
+  background: var(--gradient-rainbow);
+  border: none;
+  border-radius: 2px;
+  margin: var(--space-md) auto;
+}
+
+.btn {
+  display: inline-block;
+  padding: var(--space-md) var(--space-xl);
+  border-radius: 50px;
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  font-weight: 500;
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--transition);
+  border: none;
+  text-decoration: none;
+}
+
+.btn--primary {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+.btn--primary:hover {
+  background: var(--color-primary-dark);
+  color: var(--color-white);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn--outline {
+  background: transparent;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+}
+
+.btn--outline:hover {
+  background: var(--color-primary);
+  color: var(--color-white);
+  transform: translateY(-2px);
+}
+
+/* ===========================
+   Responsive
+   =========================== */
+@media (max-width: 768px) {
+  :root {
+    --font-size-hero: 2rem;
+    --font-size-3xl: 1.75rem;
+    --font-size-2xl: 1.5rem;
+  }
+
+  .section {
+    padding: var(--space-2xl) 0;
+  }
+}

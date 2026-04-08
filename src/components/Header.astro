@@ -1,0 +1,170 @@
+---
+const currentPath = Astro.url.pathname;
+const navLinks = [
+  { href: '/', label: 'ホーム' },
+  { href: '/services/', label: 'サービス' },
+  { href: '/about/', label: 'プロフィール' },
+  { href: '/contact/', label: 'お問い合わせ' },
+];
+---
+
+<header class="header">
+  <div class="header__inner container">
+    <a href="/" class="header__logo">
+      <span class="header__logo-icon">🌈</span>
+      <span class="header__logo-text">Mizuho Rainbow</span>
+    </a>
+    <button class="header__toggle" aria-label="メニューを開く" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav class="header__nav">
+      {navLinks.map(link => (
+        <a
+          href={link.href}
+          class:list={['header__link', { 'is-active': currentPath === link.href }]}
+        >
+          {link.label}
+        </a>
+      ))}
+    </nav>
+  </div>
+</header>
+
+<style>
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(253, 251, 249, 0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+  }
+
+  .header__logo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    text-decoration: none;
+    color: var(--color-text);
+  }
+
+  .header__logo-icon {
+    font-size: 1.5rem;
+  }
+
+  .header__logo-text {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    color: var(--color-primary-dark);
+  }
+
+  .header__nav {
+    display: flex;
+    gap: var(--space-xl);
+  }
+
+  .header__link {
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    color: var(--color-text);
+    text-decoration: none;
+    padding: var(--space-xs) 0;
+    position: relative;
+    transition: color var(--transition);
+  }
+
+  .header__link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--gradient-rainbow);
+    transition: width var(--transition);
+    border-radius: 1px;
+  }
+
+  .header__link:hover,
+  .header__link.is-active {
+    color: var(--color-primary-dark);
+  }
+
+  .header__link:hover::after,
+  .header__link.is-active::after {
+    width: 100%;
+  }
+
+  .header__toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: var(--space-sm);
+  }
+
+  .header__toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--color-text);
+    border-radius: 2px;
+    transition: all var(--transition);
+  }
+
+  @media (max-width: 768px) {
+    .header__toggle {
+      display: flex;
+    }
+
+    .header__nav {
+      display: none;
+      position: absolute;
+      top: 64px;
+      left: 0;
+      right: 0;
+      background: var(--color-white);
+      flex-direction: column;
+      padding: var(--space-lg);
+      gap: var(--space-lg);
+      border-bottom: 1px solid var(--color-border);
+      box-shadow: var(--shadow-md);
+    }
+
+    .header__nav.is-open {
+      display: flex;
+    }
+
+    .header__toggle[aria-expanded="true"] span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    .header__toggle[aria-expanded="true"] span:nth-child(2) {
+      opacity: 0;
+    }
+    .header__toggle[aria-expanded="true"] span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+  }
+</style>
+
+<script>
+  const toggle = document.querySelector('.header__toggle');
+  const nav = document.querySelector('.header__nav');
+  toggle?.addEventListener('click', () => {
+    const expanded = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!expanded));
+    nav?.classList.toggle('is-open');
+  });
+</script>

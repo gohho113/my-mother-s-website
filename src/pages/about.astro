@@ -1,0 +1,231 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+---
+
+<BaseLayout title="プロフィール" description="Mizuho Rainbow プロフィール｜カラーセラピスト・心理カウンセラー｜岩手県宮古市">
+
+  <Hero
+    title="プロフィール"
+    subtitle="Mizuho Rainbow について"
+  />
+
+  <!-- プロフィール -->
+  <section class="section">
+    <div class="container">
+      <div class="profile">
+        <div class="profile__image">
+          <div class="profile__placeholder">
+            <span>🌈</span>
+          </div>
+        </div>
+        <div class="profile__info">
+          <h2 class="profile__name">Mizuho Rainbow</h2>
+          <p class="profile__titles">
+            カラーセラピスト ／ 心理カウンセラー ／ ベビーキッズマッサージインストラクター
+          </p>
+          <p class="profile__text">
+            岩手県宮古市を拠点に、カラーセラピーと心理カウンセリングを中心とした活動をしています。
+            色彩の持つ不思議な力に魅せられ、色を通じて人の心に寄り添う道を選びました。
+          </p>
+          <p class="profile__text">
+            フリーランス保育士としての経験、子育て支援員としての活動、
+            そして県の特別支援教育サポーターとしての知識を活かし、
+            お子さまから大人の方まで、幅広くサポートさせていただいています。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- メッセージ -->
+  <section class="section section--alt">
+    <div class="container container--narrow">
+      <SectionHeading title="私の想い" />
+      <blockquote class="message">
+        <p>
+          私自身、極超低体重出生児の母であり、障がいを持つ子どもの母でもあります。
+        </p>
+        <p>
+          子育ての中で何度も壁にぶつかり、一人で悩み、涙を流した日々がありました。
+          そんな経験があるからこそ、同じように悩んでいるお母さんたちの気持ちに
+          心から寄り添いたいと思っています。
+        </p>
+        <p>
+          「一人じゃないよ」「あなたは頑張っているよ」<br />
+          そんな言葉を色と一緒に届けたい。<br />
+          それが私の活動の原点です。
+        </p>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- 資格 -->
+  <section class="section">
+    <div class="container container--narrow">
+      <SectionHeading title="資格・経歴" />
+      <ul class="qualifications">
+        <li>
+          <span class="qual__icon">🎨</span>
+          <span>カラーセラピスト</span>
+        </li>
+        <li>
+          <span class="qual__icon">💬</span>
+          <span>心理カウンセラー</span>
+        </li>
+        <li>
+          <span class="qual__icon">👶</span>
+          <span>ベビーキッズマッサージインストラクター</span>
+        </li>
+        <li>
+          <span class="qual__icon">🏫</span>
+          <span>フリーランス保育士</span>
+        </li>
+        <li>
+          <span class="qual__icon">🤲</span>
+          <span>子育て支援員</span>
+        </li>
+        <li>
+          <span class="qual__icon">📚</span>
+          <span>県特別支援教育サポーター</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- space♡mom -->
+  <section class="section section--alt">
+    <div class="container container--narrow text-center">
+      <SectionHeading title="space♡mom" subtitle="親子サポートコミュニティ" />
+      <p class="community-text">
+        同じ悩みを持つママたちが安心して集まれる場所を作りたい。<br />
+        そんな想いから立ち上げた親子サポートコミュニティです。
+      </p>
+      <p class="community-text">
+        情報交換、交流イベント、マルシェへの出店など、<br />
+        ママたちが笑顔になれる活動を行っています。
+      </p>
+      <div style="margin-top: var(--space-xl);">
+        <a href="https://www.instagram.com/smile7rainbow/" target="_blank" rel="noopener noreferrer" class="btn btn--outline">
+          Instagram で最新情報をチェック
+        </a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .profile {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: var(--space-3xl);
+    align-items: start;
+  }
+
+  .profile__image {
+    display: flex;
+    justify-content: center;
+  }
+
+  .profile__placeholder {
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    background: var(--gradient-hero);
+    border: 4px solid var(--color-primary-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+  }
+
+  .profile__name {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--space-sm);
+  }
+
+  .profile__titles {
+    color: var(--color-primary-dark);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    margin-bottom: var(--space-xl);
+  }
+
+  .profile__text {
+    font-size: var(--font-size-base);
+    line-height: 2;
+    margin-bottom: var(--space-lg);
+  }
+
+  .message {
+    background: var(--color-white);
+    border-radius: var(--border-radius-lg);
+    padding: var(--space-2xl) var(--space-3xl);
+    border-left: 4px solid var(--color-primary-light);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .message p {
+    font-size: var(--font-size-lg);
+    line-height: 2;
+    margin-bottom: var(--space-lg);
+  }
+
+  .message p:last-child {
+    margin-bottom: 0;
+  }
+
+  .qualifications {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-lg);
+  }
+
+  .qualifications li {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-lg);
+    background: var(--color-white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    font-weight: 500;
+  }
+
+  .qual__icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  .community-text {
+    font-size: var(--font-size-lg);
+    line-height: 2;
+    margin-bottom: var(--space-md);
+  }
+
+  @media (max-width: 768px) {
+    .profile {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+
+    .profile__titles {
+      margin-bottom: var(--space-lg);
+    }
+
+    .profile__text {
+      text-align: left;
+    }
+
+    .message {
+      padding: var(--space-xl);
+    }
+
+    .qualifications {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
