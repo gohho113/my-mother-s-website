@@ -19,6 +19,79 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
   </section>
 
+  <!-- ニュース & お知らせ -->
+  <section id="news" class="section">
+    <div class="container">
+      <h2 class="section-title text-center">ニュース & お知らせ</h2>
+      <hr class="rainbow-line" />
+      <div class="news-list">
+        <article class="news-item">
+          <time class="news-date">2026.04.01</time>
+          <span class="news-tag news-tag--info">お知らせ</span>
+          <p class="news-title">ウェブサイトをオープンしました</p>
+        </article>
+        <article class="news-item">
+          <time class="news-date">2026.03.15</time>
+          <span class="news-tag news-tag--event">イベント</span>
+          <p class="news-title">春のチャレンジマルシェに出店します</p>
+        </article>
+        <article class="news-item">
+          <time class="news-date">2026.03.01</time>
+          <span class="news-tag news-tag--info">お知らせ</span>
+          <p class="news-title">4月の予約受付を開始しました</p>
+        </article>
+      </div>
+      <p class="news-note text-center">※ 今後 microCMS を接続して更新できるようになります</p>
+    </div>
+  </section>
+
+  <!-- イベントカレンダー -->
+  <section id="events" class="section section--alt">
+    <div class="container">
+      <h2 class="section-title text-center">イベントカレンダー</h2>
+      <hr class="rainbow-line" />
+      <div class="events-grid">
+        <div class="event-card">
+          <div class="event-card__date">
+            <span class="event-card__month">4月</span>
+            <span class="event-card__day">20</span>
+            <span class="event-card__weekday">日</span>
+          </div>
+          <div class="event-card__info">
+            <h3 class="event-card__title">春のチャレンジマルシェ</h3>
+            <p class="event-card__meta">📍 宮古市内 ／ 🕐 10:00〜15:00</p>
+            <p class="event-card__desc">カラーセラピー体験ブースを出店予定。お気軽にお立ち寄りください。</p>
+          </div>
+        </div>
+        <div class="event-card">
+          <div class="event-card__date">
+            <span class="event-card__month">5月</span>
+            <span class="event-card__day">10</span>
+            <span class="event-card__weekday">土</span>
+          </div>
+          <div class="event-card__info">
+            <h3 class="event-card__title">ベビーマッサージ教室</h3>
+            <p class="event-card__meta">📍 宮古市内 ／ 🕐 13:00〜14:30</p>
+            <p class="event-card__desc">親子で楽しめるベビーマッサージ教室です。要予約。</p>
+          </div>
+        </div>
+        <div class="event-card">
+          <div class="event-card__date">
+            <span class="event-card__month">5月</span>
+            <span class="event-card__day">25</span>
+            <span class="event-card__weekday">日</span>
+          </div>
+          <div class="event-card__info">
+            <h3 class="event-card__title">占い & sweets イベント</h3>
+            <p class="event-card__meta">📍 宮古市内 ／ 🕐 10:00〜16:00</p>
+            <p class="event-card__desc">カラーセラピーとスイーツを楽しめるコラボイベントです。</p>
+          </div>
+        </div>
+      </div>
+      <p class="news-note text-center">※ イベント情報は仮の内容です。最新情報は <a href="https://www.instagram.com/smile7rainbow/" target="_blank" rel="noopener noreferrer">Instagram</a> をご確認ください</p>
+    </div>
+  </section>
+
   <!-- はじめまして -->
   <section class="section">
     <div class="container container--narrow text-center">
@@ -249,6 +322,29 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 </BaseLayout>
 
 <style>
+  /* ニュース */
+  .news-list { max-width: 700px; margin: 0 auto; }
+  .news-item { display: flex; align-items: center; gap: var(--space-md); padding: var(--space-md) 0; border-bottom: 1px solid var(--color-border); }
+  .news-date { font-size: var(--font-size-sm); color: var(--color-text-light); white-space: nowrap; min-width: 90px; }
+  .news-tag { font-size: 0.7rem; padding: 2px 10px; border-radius: 50px; white-space: nowrap; font-weight: 500; }
+  .news-tag--info { background: var(--color-primary-light); color: var(--color-white); }
+  .news-tag--event { background: var(--color-secondary); color: var(--color-white); }
+  .news-title { font-size: var(--font-size-base); }
+  .news-note { margin-top: var(--space-xl); color: var(--color-text-light); font-size: var(--font-size-sm); }
+  .news-note a { color: var(--color-primary-dark); text-decoration: underline; }
+
+  /* イベントカレンダー */
+  .events-grid { display: flex; flex-direction: column; gap: var(--space-lg); max-width: 800px; margin: 0 auto; }
+  .event-card { display: flex; gap: var(--space-xl); background: var(--color-white); border-radius: var(--border-radius-lg); padding: var(--space-xl); box-shadow: var(--shadow-sm); transition: all var(--transition); }
+  .event-card:hover { box-shadow: var(--shadow-md); }
+  .event-card__date { flex-shrink: 0; width: 80px; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; background: var(--gradient-hero); border-radius: var(--border-radius); padding: var(--space-sm); }
+  .event-card__month { font-size: var(--font-size-sm); color: var(--color-primary-dark); font-weight: 500; }
+  .event-card__day { font-family: var(--font-heading); font-size: var(--font-size-2xl); font-weight: 700; color: var(--color-text); line-height: 1.2; }
+  .event-card__weekday { font-size: var(--font-size-sm); color: var(--color-text-light); }
+  .event-card__title { font-family: var(--font-heading); font-size: var(--font-size-lg); margin-bottom: var(--space-xs); }
+  .event-card__meta { font-size: var(--font-size-sm); color: var(--color-text-light); margin-bottom: var(--space-sm); }
+  .event-card__desc { font-size: var(--font-size-sm); color: var(--color-text-light); }
+
   /* ヒーロー */
   .hero {
     position: relative;
@@ -346,5 +442,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     .qualifications { grid-template-columns: repeat(2, 1fr); }
     .info-grid { grid-template-columns: 1fr; }
     .hero { padding: var(--space-3xl) 0; min-height: auto; }
+    .news-item { flex-wrap: wrap; gap: var(--space-xs) var(--space-md); }
+    .event-card { flex-direction: column; gap: var(--space-md); }
+    .event-card__date { width: 100%; flex-direction: row; gap: var(--space-sm); padding: var(--space-sm) var(--space-md); }
+    .event-card__day { font-size: var(--font-size-xl); }
   }
 </style>
