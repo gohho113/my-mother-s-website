@@ -83,28 +83,24 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <div class="services-grid">
         <div class="card" style="--card-accent: var(--color-primary-light)">
           <div class="card__accent"></div>
-          <div class="card__icon">🎨</div>
           <h3 class="card__title">カラーセラピー</h3>
           <p class="card__desc">直感で選んだ色から、今のあなたの心の状態やメッセージを読み解きます。自分自身を深く理解するきっかけに。</p>
           <p class="card__price">※料金はお問い合わせください</p>
         </div>
         <div class="card" style="--card-accent: var(--color-secondary-light)">
           <div class="card__accent"></div>
-          <div class="card__icon">💬</div>
           <h3 class="card__title">心理カウンセリング</h3>
           <p class="card__desc">日々のストレスや子育ての悩み、人間関係など、安心できる空間でじっくりお話をお聴きします。</p>
           <p class="card__price">※料金はお問い合わせください</p>
         </div>
         <div class="card" style="--card-accent: var(--color-accent-warm)">
           <div class="card__accent"></div>
-          <div class="card__icon">👶</div>
           <h3 class="card__title">ベビーキッズマッサージ</h3>
           <p class="card__desc">親子のスキンシップを通じて、赤ちゃん・お子さまとの絆を深めるマッサージをお伝えします。</p>
           <p class="card__price">※料金はお問い合わせください</p>
         </div>
         <div class="card" style="--card-accent: var(--color-accent-rose)">
           <div class="card__accent"></div>
-          <div class="card__icon">🤝</div>
           <h3 class="card__title">親子サポート（space♡mom）</h3>
           <p class="card__desc">同じ悩みを持つママたちが集まり、情報交換や交流ができるコミュニティです。温かい居場所を提供しています。</p>
           <p class="card__price">詳細はInstagramをご確認ください</p>
@@ -276,12 +272,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <div class="qualifications-wrap">
         <h3 class="flow-title text-center">資格・経歴</h3>
         <ul class="qualifications">
-          <li><span class="qual__icon">🎨</span><span>カラーセラピスト</span></li>
-          <li><span class="qual__icon">💬</span><span>心理カウンセラー</span></li>
-          <li><span class="qual__icon">👶</span><span>ベビーキッズマッサージインストラクター</span></li>
-          <li><span class="qual__icon">🏫</span><span>フリーランス保育士</span></li>
-          <li><span class="qual__icon">🤲</span><span>子育て支援員</span></li>
-          <li><span class="qual__icon">📚</span><span>県特別支援教育サポーター</span></li>
+          <li><span>カラーセラピスト</span></li>
+          <li><span>心理カウンセラー</span></li>
+          <li><span>ベビーキッズマッサージインストラクター</span></li>
+          <li><span>フリーランス保育士</span></li>
+          <li><span>子育て支援員</span></li>
+          <li><span>県特別支援教育サポーター</span></li>
         </ul>
       </div>
     </div>
@@ -294,26 +290,26 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <hr class="rainbow-line" />
       <p class="section-subtitle text-center">活動の様子をお届けします</p>
       <div class="gallery-grid">
-        <div class="gallery-item" style="background: linear-gradient(135deg, #E8A0B0, #D4B5C9);">
-          <span class="gallery-placeholder">🎨<br />カラーセラピー</span>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1557672172-298e090bd0f1?w=600&h=600&fit=crop" alt="カラーセラピー" loading="lazy" />
         </div>
-        <div class="gallery-item" style="background: linear-gradient(135deg, #A8D4C8, #7EB5A6);">
-          <span class="gallery-placeholder">🌈<br />マルシェ出店</span>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1488459716781-31db52582fe9?w=600&h=600&fit=crop" alt="マルシェ出店" loading="lazy" />
         </div>
-        <div class="gallery-item" style="background: linear-gradient(135deg, #A0C8E8, #7EB5A6);">
-          <span class="gallery-placeholder">👶<br />ベビーマッサージ</span>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1492725764893-90b379c2b6e7?w=600&h=600&fit=crop" alt="ベビーマッサージ" loading="lazy" />
         </div>
-        <div class="gallery-item" style="background: linear-gradient(135deg, #E8C4A0, #D4C491);">
-          <span class="gallery-placeholder">💬<br />カウンセリング</span>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1573497620053-ea5300f94f21?w=600&h=600&fit=crop" alt="カウンセリング" loading="lazy" />
         </div>
-        <div class="gallery-item" style="background: linear-gradient(135deg, #D4B5C9, #B784A7);">
-          <span class="gallery-placeholder">🤝<br />space♡mom</span>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&h=600&fit=crop" alt="コミュニティ" loading="lazy" />
         </div>
-        <div class="gallery-item" style="background: linear-gradient(135deg, #D4C491, #E8C4A0);">
-          <span class="gallery-placeholder">✨<br />イベント</span>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&h=600&fit=crop" alt="イベント" loading="lazy" />
         </div>
       </div>
-      <p class="news-note text-center">※ 写真が準備でき次第、差し替えます</p>
+      <p class="news-note text-center">※ イメージ写真です。実際の活動写真に差し替え予定</p>
     </div>
   </section>
 
@@ -379,17 +375,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
       <div class="info-grid">
         <div class="info-card">
-          <h4 class="info-card__title">📍 所在地</h4>
+          <h4 class="info-card__title">所在地</h4>
           <p>岩手県宮古市</p>
           <p class="info-note">※詳しい住所はご予約時にお伝えします</p>
         </div>
         <div class="info-card">
-          <h4 class="info-card__title">🕐 営業時間</h4>
+          <h4 class="info-card__title">営業時間</h4>
           <p>10:00 〜 17:00</p>
           <p class="info-note">※完全予約制</p>
         </div>
         <div class="info-card">
-          <h4 class="info-card__title">📱 Instagram</h4>
+          <h4 class="info-card__title">Instagram</h4>
           <p><a href="https://www.instagram.com/smile7rainbow/" target="_blank" rel="noopener noreferrer">@smile7rainbow</a></p>
           <p class="info-note">DMでもお気軽にどうぞ</p>
         </div>
@@ -596,12 +592,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       const weekday = weekdays[start.getDay()];
 
       let meta = '';
-      if (event.location) meta += `📍 ${event.location}`;
+      if (event.location) meta += event.location;
       if (event.start.dateTime) {
         const endTime = new Date(event.end.dateTime);
         const startStr = `${start.getHours()}:${String(start.getMinutes()).padStart(2,'0')}`;
         const endStr = `${endTime.getHours()}:${String(endTime.getMinutes()).padStart(2,'0')}`;
-        meta += `${meta ? ' ／ ' : ''}🕐 ${startStr}〜${endStr}`;
+        meta += `${meta ? ' ／ ' : ''}${startStr}〜${endStr}`;
       }
 
       return `
@@ -630,7 +626,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
         <div class="event-card__info">
           <h3 class="event-card__title">春のチャレンジマルシェ</h3>
-          <p class="event-card__meta">📍 宮古市内 ／ 🕐 10:00〜15:00</p>
+          <p class="event-card__meta">宮古市内 ／ 10:00〜15:00</p>
           <p class="event-card__desc">カラーセラピー体験ブースを出店予定。お気軽にお立ち寄りください。</p>
         </div>
       </div>
@@ -642,7 +638,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
         <div class="event-card__info">
           <h3 class="event-card__title">ベビーマッサージ教室</h3>
-          <p class="event-card__meta">📍 宮古市内 ／ 🕐 13:00〜14:30</p>
+          <p class="event-card__meta">宮古市内 ／ 13:00〜14:30</p>
           <p class="event-card__desc">親子で楽しめるベビーマッサージ教室です。要予約。</p>
         </div>
       </div>
@@ -654,7 +650,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
         <div class="event-card__info">
           <h3 class="event-card__title">占い & sweets イベント</h3>
-          <p class="event-card__meta">📍 宮古市内 ／ 🕐 10:00〜16:00</p>
+          <p class="event-card__meta">宮古市内 ／ 10:00〜16:00</p>
           <p class="event-card__desc">カラーセラピーとスイーツを楽しめるコラボイベントです。</p>
         </div>
       </div>`;
