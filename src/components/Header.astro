@@ -1,16 +1,16 @@
 ---
 const currentPath = Astro.url.pathname;
 const navLinks = [
-  { href: '/', label: 'ホーム' },
-  { href: '/services/', label: 'サービス' },
-  { href: '/about/', label: 'プロフィール' },
-  { href: '/contact/', label: 'お問い合わせ' },
+  { href: import.meta.env.BASE_URL, label: 'ホーム' },
+  { href: `${import.meta.env.BASE_URL}services/`, label: 'サービス' },
+  { href: `${import.meta.env.BASE_URL}about/`, label: 'プロフィール' },
+  { href: `${import.meta.env.BASE_URL}contact/`, label: 'お問い合わせ' },
 ];
 ---
 
 <header class="header">
   <div class="header__inner container">
-    <a href="/" class="header__logo">
+    <a href={import.meta.env.BASE_URL} class="header__logo">
       <span class="header__logo-icon">🌈</span>
       <span class="header__logo-text">Mizuho Rainbow</span>
     </a>

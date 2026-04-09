@@ -10,10 +10,10 @@ const currentYear = new Date().getFullYear();
       <p class="footer__tagline">色の力で、心に寄り添う</p>
     </div>
     <nav class="footer__nav">
-      <a href="/">ホーム</a>
-      <a href="/services/">サービス</a>
-      <a href="/about/">プロフィール</a>
-      <a href="/contact/">お問い合わせ</a>
+      <a href={import.meta.env.BASE_URL}>ホーム</a>
+      <a href={`${import.meta.env.BASE_URL}services/`}>サービス</a>
+      <a href={`${import.meta.env.BASE_URL}about/`}>プロフィール</a>
+      <a href={`${import.meta.env.BASE_URL}contact/`}>お問い合わせ</a>
     </nav>
     <div class="footer__social">
       <a href="https://www.instagram.com/smile7rainbow/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
