@@ -1,17 +1,15 @@
 ---
-const currentPath = Astro.url.pathname;
-const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 const navLinks = [
-  { href: base, label: 'ホーム' },
-  { href: `${base}services/`, label: 'サービス' },
-  { href: `${base}about/`, label: 'プロフィール' },
-  { href: `${base}contact/`, label: 'お問い合わせ' },
+  { href: '#home', label: 'ホーム' },
+  { href: '#services', label: 'サービス' },
+  { href: '#about', label: 'プロフィール' },
+  { href: '#contact', label: 'お問い合わせ' },
 ];
 ---
 
 <header class="header">
   <div class="header__inner container">
-    <a href={base} class="header__logo">
+    <a href="#home" class="header__logo">
       <span class="header__logo-icon">🌈</span>
       <span class="header__logo-text">Mizuho Rainbow</span>
     </a>
@@ -22,12 +20,7 @@ const navLinks = [
     </button>
     <nav class="header__nav">
       {navLinks.map(link => (
-        <a
-          href={link.href}
-          class:list={['header__link', { 'is-active': currentPath === link.href }]}
-        >
-          {link.label}
-        </a>
+        <a href={link.href} class="header__link">{link.label}</a>
       ))}
     </nav>
   </div>
@@ -58,9 +51,7 @@ const navLinks = [
     color: var(--color-text);
   }
 
-  .header__logo-icon {
-    font-size: 1.5rem;
-  }
+  .header__logo-icon { font-size: 1.5rem; }
 
   .header__logo-text {
     font-family: var(--font-heading);
@@ -96,15 +87,8 @@ const navLinks = [
     border-radius: 1px;
   }
 
-  .header__link:hover,
-  .header__link.is-active {
-    color: var(--color-primary-dark);
-  }
-
-  .header__link:hover::after,
-  .header__link.is-active::after {
-    width: 100%;
-  }
+  .header__link:hover { color: var(--color-primary-dark); }
+  .header__link:hover::after { width: 100%; }
 
   .header__toggle {
     display: none;
@@ -126,9 +110,7 @@ const navLinks = [
   }
 
   @media (max-width: 768px) {
-    .header__toggle {
-      display: flex;
-    }
+    .header__toggle { display: flex; }
 
     .header__nav {
       display: none;
@@ -144,19 +126,11 @@ const navLinks = [
       box-shadow: var(--shadow-md);
     }
 
-    .header__nav.is-open {
-      display: flex;
-    }
+    .header__nav.is-open { display: flex; }
 
-    .header__toggle[aria-expanded="true"] span:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px);
-    }
-    .header__toggle[aria-expanded="true"] span:nth-child(2) {
-      opacity: 0;
-    }
-    .header__toggle[aria-expanded="true"] span:nth-child(3) {
-      transform: rotate(-45deg) translate(5px, -5px);
-    }
+    .header__toggle[aria-expanded="true"] span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .header__toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .header__toggle[aria-expanded="true"] span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
   }
 </style>
 
@@ -167,5 +141,13 @@ const navLinks = [
     const expanded = toggle.getAttribute('aria-expanded') === 'true';
     toggle.setAttribute('aria-expanded', String(!expanded));
     nav?.classList.toggle('is-open');
+  });
+
+  // モバイルでリンククリック時にメニューを閉じる
+  nav?.querySelectorAll('.header__link').forEach(link => {
+    link.addEventListener('click', () => {
+      nav.classList.remove('is-open');
+      toggle?.setAttribute('aria-expanded', 'false');
+    });
   });
 </script>

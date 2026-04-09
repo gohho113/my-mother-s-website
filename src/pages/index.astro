@@ -1,154 +1,350 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Hero from '../components/Hero.astro';
-import SectionHeading from '../components/SectionHeading.astro';
-import FeatureItem from '../components/FeatureItem.astro';
-import ServiceCard from '../components/ServiceCard.astro';
-const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 ---
 
-<BaseLayout title="ホーム" description="Mizuho Rainbow｜カラーセラピー・心理カウンセリング・ベビーキッズマッサージ｜岩手県宮古市">
+<BaseLayout title="Mizuho Rainbow" description="Mizuho Rainbow｜カラーセラピー・心理カウンセリング・ベビーキッズマッサージ｜岩手県宮古市">
 
-  <Hero
-    title="色の力で、心に寄り添う"
-    subtitle="カラーセラピーと心理カウンセリングを通じて、あなたらしい輝きを取り戻すお手伝いをします"
-    ctaText="サービスを見る"
-    ctaHref={`${base}services/`}
-  />
+  <!-- ヒーロー -->
+  <section id="home" class="hero">
+    <div class="hero__bg">
+      <div class="hero__circle hero__circle--1"></div>
+      <div class="hero__circle hero__circle--2"></div>
+      <div class="hero__circle hero__circle--3"></div>
+      <div class="hero__circle hero__circle--4"></div>
+    </div>
+    <div class="hero__content container">
+      <h1 class="hero__title">色の力で、心に寄り添う</h1>
+      <p class="hero__subtitle">カラーセラピーと心理カウンセリングを通じて、<br />あなたらしい輝きを取り戻すお手伝いをします</p>
+      <a href="#services" class="btn btn--primary">サービスを見る</a>
+    </div>
+  </section>
 
-  <!-- ご挨拶 -->
+  <!-- はじめまして -->
   <section class="section">
     <div class="container container--narrow text-center">
-      <SectionHeading title="はじめまして" />
+      <h2 class="section-title">はじめまして</h2>
+      <hr class="rainbow-line" />
       <p class="intro-text">
         岩手県宮古市を拠点に活動している <strong>Mizuho Rainbow</strong> です。<br />
-        カラーセラピスト・心理カウンセラーとして、色彩の持つ力を通じて<br class="hide-sp" />
+        カラーセラピスト・心理カウンセラーとして、色彩の持つ力を通じて<br />
         心と体のバランスを整えるお手伝いをしています。
       </p>
       <p class="intro-text">
-        自身も極超低体重出生児の母、障がい児の母としての経験を持ち、<br class="hide-sp" />
+        自身も極超低体重出生児の母、障がい児の母としての経験を持ち、<br />
         同じ悩みを抱えるお母さんたちに寄り添いたいという想いで活動しています。
       </p>
     </div>
   </section>
 
-  <!-- 選ばれる理由 -->
+  <!-- 選ばれる3つの理由 -->
   <section class="section section--alt">
     <div class="container">
-      <SectionHeading title="選ばれる3つの理由" />
+      <h2 class="section-title text-center">選ばれる3つの理由</h2>
+      <hr class="rainbow-line" />
       <div class="features-grid">
-        <FeatureItem
-          icon="🎨"
-          title="色彩を通じた心のケア"
-          description="色の持つエネルギーとメッセージを活かし、言葉だけでは届かない心の奥にそっと寄り添います。"
-        />
-        <FeatureItem
-          icon="💝"
-          title="ママに寄り添う温かさ"
-          description="子育てに悩むママの気持ちに、自身の経験を重ねながら心からの共感とサポートを届けます。"
-        />
-        <FeatureItem
-          icon="🌈"
-          title="多彩な資格と経験"
-          description="カラーセラピー、心理カウンセリング、ベビーマッサージなど、幅広い専門知識で一人ひとりに合った支援を行います。"
-        />
+        <div class="feature">
+          <div class="feature__icon">🎨</div>
+          <h3 class="feature__title">色彩を通じた心のケア</h3>
+          <p class="feature__desc">色の持つエネルギーとメッセージを活かし、言葉だけでは届かない心の奥にそっと寄り添います。</p>
+        </div>
+        <div class="feature">
+          <div class="feature__icon">💝</div>
+          <h3 class="feature__title">ママに寄り添う温かさ</h3>
+          <p class="feature__desc">子育てに悩むママの気持ちに、自身の経験を重ねながら心からの共感とサポートを届けます。</p>
+        </div>
+        <div class="feature">
+          <div class="feature__icon">🌈</div>
+          <h3 class="feature__title">多彩な資格と経験</h3>
+          <p class="feature__desc">カラーセラピー、心理カウンセリング、ベビーマッサージなど、幅広い専門知識で一人ひとりに合った支援を行います。</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- サービスプレビュー -->
-  <section class="section">
+  <!-- サービス -->
+  <section id="services" class="section">
     <div class="container">
-      <SectionHeading title="サービス" subtitle="心と体に寄り添う多彩なメニュー" />
+      <h2 class="section-title text-center">サービス</h2>
+      <hr class="rainbow-line" />
+      <p class="section-subtitle text-center">心と体に寄り添う多彩なメニュー</p>
       <div class="services-grid">
-        <ServiceCard
-          icon="🎨"
-          title="カラーセラピー"
-          description="直感で選んだ色から、今のあなたの心の状態やメッセージを読み解きます。自分自身を深く理解するきっかけに。"
-          accent="var(--color-primary-light)"
-        />
-        <ServiceCard
-          icon="💬"
-          title="心理カウンセリング"
-          description="日々のストレスや子育ての悩み、人間関係など、安心できる空間でじっくりお話をお聴きします。"
-          accent="var(--color-secondary-light)"
-        />
-        <ServiceCard
-          icon="👶"
-          title="ベビーキッズマッサージ"
-          description="親子のスキンシップを通じて、赤ちゃん・お子さまとの絆を深めるマッサージをお伝えします。"
-          accent="var(--color-accent-warm)"
-        />
+        <div class="card" style="--card-accent: var(--color-primary-light)">
+          <div class="card__accent"></div>
+          <div class="card__icon">🎨</div>
+          <h3 class="card__title">カラーセラピー</h3>
+          <p class="card__desc">直感で選んだ色から、今のあなたの心の状態やメッセージを読み解きます。自分自身を深く理解するきっかけに。</p>
+          <p class="card__price">※料金はお問い合わせください</p>
+        </div>
+        <div class="card" style="--card-accent: var(--color-secondary-light)">
+          <div class="card__accent"></div>
+          <div class="card__icon">💬</div>
+          <h3 class="card__title">心理カウンセリング</h3>
+          <p class="card__desc">日々のストレスや子育ての悩み、人間関係など、安心できる空間でじっくりお話をお聴きします。</p>
+          <p class="card__price">※料金はお問い合わせください</p>
+        </div>
+        <div class="card" style="--card-accent: var(--color-accent-warm)">
+          <div class="card__accent"></div>
+          <div class="card__icon">👶</div>
+          <h3 class="card__title">ベビーキッズマッサージ</h3>
+          <p class="card__desc">親子のスキンシップを通じて、赤ちゃん・お子さまとの絆を深めるマッサージをお伝えします。</p>
+          <p class="card__price">※料金はお問い合わせください</p>
+        </div>
+        <div class="card" style="--card-accent: var(--color-accent-rose)">
+          <div class="card__accent"></div>
+          <div class="card__icon">🤝</div>
+          <h3 class="card__title">親子サポート（space♡mom）</h3>
+          <p class="card__desc">同じ悩みを持つママたちが集まり、情報交換や交流ができるコミュニティです。温かい居場所を提供しています。</p>
+          <p class="card__price">詳細はInstagramをご確認ください</p>
+        </div>
       </div>
-      <div class="text-center" style="margin-top: var(--space-2xl);">
-        <a href={`${base}services/`} class="btn btn--outline">すべてのサービスを見る</a>
+
+      <!-- セッションの流れ -->
+      <div class="flow-wrap">
+        <h3 class="flow-title text-center">セッションの流れ</h3>
+        <div class="flow">
+          <div class="flow__step">
+            <div class="flow__number">1</div>
+            <div class="flow__content">
+              <h4>ご予約・お問い合わせ</h4>
+              <p>お問い合わせフォームまたはInstagramのDMからお気軽にご連絡ください。</p>
+            </div>
+          </div>
+          <div class="flow__step">
+            <div class="flow__number">2</div>
+            <div class="flow__content">
+              <h4>カウンセリング</h4>
+              <p>まずはゆっくりとお話をお聴きします。今のお気持ちやお悩みをお聞かせください。</p>
+            </div>
+          </div>
+          <div class="flow__step">
+            <div class="flow__number">3</div>
+            <div class="flow__content">
+              <h4>セッション</h4>
+              <p>ご要望に合わせたセラピーを行います。カラーセラピーの場合は、直感で色をお選びいただきます。</p>
+            </div>
+          </div>
+          <div class="flow__step">
+            <div class="flow__number">4</div>
+            <div class="flow__content">
+              <h4>フィードバック & アフターフォロー</h4>
+              <p>セッションの振り返りと日常に活かせるアドバイスをお伝えし、継続的なサポートも行います。</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="cta-section">
-    <div class="container text-center">
-      <h2 class="cta-title">お気軽にご相談ください</h2>
-      <p class="cta-text">色のことも、心のことも、子育てのことも。<br />まずはお話からはじめましょう。</p>
-      <a href={`${base}contact/`} class="btn btn--primary">お問い合わせはこちら</a>
+  <!-- プロフィール -->
+  <section id="about" class="section section--alt">
+    <div class="container">
+      <h2 class="section-title text-center">プロフィール</h2>
+      <hr class="rainbow-line" />
+      <div class="profile">
+        <div class="profile__image">
+          <div class="profile__placeholder"><span>🌈</span></div>
+        </div>
+        <div class="profile__info">
+          <h3 class="profile__name">Mizuho Rainbow</h3>
+          <p class="profile__titles">カラーセラピスト ／ 心理カウンセラー ／ ベビーキッズマッサージインストラクター</p>
+          <p class="profile__text">
+            岩手県宮古市を拠点に、カラーセラピーと心理カウンセリングを中心とした活動をしています。
+            色彩の持つ不思議な力に魅せられ、色を通じて人の心に寄り添う道を選びました。
+          </p>
+          <p class="profile__text">
+            フリーランス保育士としての経験、子育て支援員としての活動、
+            県の特別支援教育サポーターとしての知識を活かし、
+            お子さまから大人の方まで、幅広くサポートしています。
+          </p>
+        </div>
+      </div>
+
+      <blockquote class="message">
+        <p>私自身、極超低体重出生児の母であり、障がいを持つ子どもの母でもあります。</p>
+        <p>
+          子育ての中で何度も壁にぶつかり、一人で悩み、涙を流した日々がありました。
+          そんな経験があるからこそ、同じように悩んでいるお母さんたちの気持ちに
+          心から寄り添いたいと思っています。
+        </p>
+        <p>
+          「一人じゃないよ」「あなたは頑張っているよ」<br />
+          そんな言葉を色と一緒に届けたい。それが私の活動の原点です。
+        </p>
+      </blockquote>
+
+      <div class="qualifications-wrap">
+        <h3 class="flow-title text-center">資格・経歴</h3>
+        <ul class="qualifications">
+          <li><span class="qual__icon">🎨</span><span>カラーセラピスト</span></li>
+          <li><span class="qual__icon">💬</span><span>心理カウンセラー</span></li>
+          <li><span class="qual__icon">👶</span><span>ベビーキッズマッサージインストラクター</span></li>
+          <li><span class="qual__icon">🏫</span><span>フリーランス保育士</span></li>
+          <li><span class="qual__icon">🤲</span><span>子育て支援員</span></li>
+          <li><span class="qual__icon">📚</span><span>県特別支援教育サポーター</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- お問い合わせ -->
+  <section id="contact" class="section">
+    <div class="container">
+      <h2 class="section-title text-center">お問い合わせ</h2>
+      <hr class="rainbow-line" />
+      <p class="section-subtitle text-center">ご予約・ご質問などお気軽にどうぞ</p>
+
+      <form class="form" action="#" method="POST">
+        <div class="form__group">
+          <label class="form__label" for="name">お名前 <span class="form__required">必須</span></label>
+          <input class="form__input" type="text" id="name" name="name" required placeholder="例：山田 花子" />
+        </div>
+        <div class="form__group">
+          <label class="form__label" for="email">メールアドレス <span class="form__required">必須</span></label>
+          <input class="form__input" type="email" id="email" name="email" required placeholder="例：example@email.com" />
+        </div>
+        <div class="form__group">
+          <label class="form__label" for="phone">電話番号 <span class="form__optional">任意</span></label>
+          <input class="form__input" type="tel" id="phone" name="phone" placeholder="例：090-1234-5678" />
+        </div>
+        <div class="form__group">
+          <label class="form__label" for="subject">ご相談内容</label>
+          <select class="form__input" id="subject" name="subject">
+            <option value="">お選びください</option>
+            <option value="color-therapy">カラーセラピーについて</option>
+            <option value="counseling">心理カウンセリングについて</option>
+            <option value="baby-massage">ベビーキッズマッサージについて</option>
+            <option value="space-mom">space♡mom について</option>
+            <option value="other">その他</option>
+          </select>
+        </div>
+        <div class="form__group">
+          <label class="form__label" for="message">メッセージ <span class="form__required">必須</span></label>
+          <textarea class="form__input form__textarea" id="message" name="message" required rows="6" placeholder="お気軽にご相談内容をご記入ください"></textarea>
+        </div>
+        <div class="form__submit">
+          <button type="submit" class="btn btn--primary">送信する</button>
+        </div>
+      </form>
+
+      <div class="info-grid">
+        <div class="info-card">
+          <h4 class="info-card__title">📍 所在地</h4>
+          <p>岩手県宮古市</p>
+          <p class="info-note">※詳しい住所はご予約時にお伝えします</p>
+        </div>
+        <div class="info-card">
+          <h4 class="info-card__title">🕐 営業時間</h4>
+          <p>10:00 〜 17:00</p>
+          <p class="info-note">※完全予約制</p>
+        </div>
+        <div class="info-card">
+          <h4 class="info-card__title">📱 Instagram</h4>
+          <p><a href="https://www.instagram.com/smile7rainbow/" target="_blank" rel="noopener noreferrer">@smile7rainbow</a></p>
+          <p class="info-note">DMでもお気軽にどうぞ</p>
+        </div>
+      </div>
     </div>
   </section>
 
 </BaseLayout>
 
 <style>
-  .intro-text {
-    font-size: var(--font-size-lg);
-    color: var(--color-text);
-    margin-bottom: var(--space-lg);
-    line-height: 2;
-  }
-
-  .intro-text:last-child {
-    margin-bottom: 0;
-  }
-
-  .features-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-xl);
-  }
-
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-xl);
-  }
-
-  .cta-section {
+  /* ヒーロー */
+  .hero {
+    position: relative;
+    overflow: hidden;
     background: var(--gradient-hero);
     padding: var(--space-4xl) 0;
+    min-height: 480px;
+    display: flex;
+    align-items: center;
   }
+  .hero__bg { position: absolute; inset: 0; pointer-events: none; }
+  .hero__circle { position: absolute; border-radius: 50%; opacity: 0.12; }
+  .hero__circle--1 { width: 300px; height: 300px; background: var(--color-accent-rose); top: -50px; right: -50px; }
+  .hero__circle--2 { width: 200px; height: 200px; background: var(--color-secondary); bottom: -30px; left: 10%; }
+  .hero__circle--3 { width: 150px; height: 150px; background: var(--color-accent-sky); top: 30%; left: -30px; }
+  .hero__circle--4 { width: 100px; height: 100px; background: var(--color-accent-gold); bottom: 20%; right: 20%; }
+  .hero__content { position: relative; text-align: center; z-index: 1; }
+  .hero__title { font-size: var(--font-size-hero); font-weight: 700; letter-spacing: 0.05em; margin-bottom: var(--space-lg); }
+  .hero__subtitle { font-size: var(--font-size-lg); color: var(--color-text-light); max-width: 600px; margin: 0 auto var(--space-xl); }
 
-  .cta-title {
-    font-size: var(--font-size-2xl);
-    margin-bottom: var(--space-md);
-  }
+  /* 共通見出し */
+  .section-title { font-size: var(--font-size-2xl); font-weight: 700; }
+  .section-subtitle { color: var(--color-text-light); font-size: var(--font-size-lg); margin-top: calc(-1 * var(--space-md)); margin-bottom: var(--space-2xl); }
 
-  .cta-text {
-    color: var(--color-text-light);
-    font-size: var(--font-size-lg);
-    margin-bottom: var(--space-xl);
-  }
+  /* はじめまして */
+  .intro-text { font-size: var(--font-size-lg); line-height: 2; margin-bottom: var(--space-lg); }
 
-  .hide-sp {
-    display: inline;
-  }
+  /* 特徴 */
+  .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-xl); margin-top: var(--space-xl); }
+  .feature { text-align: center; padding: var(--space-xl); }
+  .feature__icon { font-size: 2.5rem; margin-bottom: var(--space-md); }
+  .feature__title { font-family: var(--font-heading); font-size: var(--font-size-lg); margin-bottom: var(--space-md); }
+  .feature__desc { color: var(--color-text-light); font-size: var(--font-size-sm); line-height: var(--line-height-normal); }
 
+  /* サービスカード */
+  .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-xl); margin-top: var(--space-xl); }
+  .card { background: var(--color-white); border-radius: var(--border-radius-lg); padding: var(--space-xl); box-shadow: var(--shadow-sm); transition: all var(--transition); position: relative; overflow: hidden; }
+  .card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+  .card__accent { position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--card-accent); }
+  .card__icon { font-size: 2rem; margin-bottom: var(--space-md); }
+  .card__title { font-family: var(--font-heading); font-size: var(--font-size-lg); margin-bottom: var(--space-sm); }
+  .card__desc { color: var(--color-text-light); font-size: var(--font-size-sm); line-height: var(--line-height-normal); margin-bottom: var(--space-md); }
+  .card__price { font-weight: 700; color: var(--color-primary-dark); font-size: var(--font-size-sm); }
+
+  /* セッションの流れ */
+  .flow-wrap { margin-top: var(--space-3xl); }
+  .flow-title { font-family: var(--font-heading); font-size: var(--font-size-xl); margin-bottom: var(--space-xl); }
+  .flow { display: flex; flex-direction: column; gap: var(--space-lg); max-width: 700px; margin: 0 auto; }
+  .flow__step { display: flex; gap: var(--space-lg); align-items: flex-start; }
+  .flow__number { flex-shrink: 0; width: 44px; height: 44px; border-radius: 50%; background: var(--gradient-rainbow); color: var(--color-white); display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-size: var(--font-size-lg); font-weight: 700; }
+  .flow__content h4 { font-family: var(--font-heading); font-size: var(--font-size-base); margin-bottom: var(--space-xs); }
+  .flow__content p { color: var(--color-text-light); font-size: var(--font-size-sm); }
+
+  /* プロフィール */
+  .profile { display: grid; grid-template-columns: 260px 1fr; gap: var(--space-3xl); align-items: start; margin-bottom: var(--space-2xl); }
+  .profile__placeholder { width: 220px; height: 220px; border-radius: 50%; background: var(--gradient-hero); border: 4px solid var(--color-primary-light); display: flex; align-items: center; justify-content: center; font-size: 4rem; }
+  .profile__name { font-family: var(--font-heading); font-size: var(--font-size-2xl); margin-bottom: var(--space-sm); }
+  .profile__titles { color: var(--color-primary-dark); font-size: var(--font-size-sm); font-weight: 500; margin-bottom: var(--space-lg); }
+  .profile__text { font-size: var(--font-size-base); line-height: 2; margin-bottom: var(--space-md); }
+  .message { background: var(--color-white); border-radius: var(--border-radius-lg); padding: var(--space-2xl); border-left: 4px solid var(--color-primary-light); box-shadow: var(--shadow-sm); margin-bottom: var(--space-2xl); }
+  .message p { font-size: var(--font-size-lg); line-height: 2; margin-bottom: var(--space-lg); }
+  .message p:last-child { margin-bottom: 0; }
+  .qualifications-wrap { margin-top: var(--space-xl); }
+  .qualifications { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-md); }
+  .qualifications li { display: flex; align-items: center; gap: var(--space-md); padding: var(--space-md); background: var(--color-white); border-radius: var(--border-radius); box-shadow: var(--shadow-sm); font-weight: 500; font-size: var(--font-size-sm); }
+  .qual__icon { font-size: 1.25rem; flex-shrink: 0; }
+
+  /* お問い合わせ */
+  .form { max-width: 600px; margin: 0 auto var(--space-3xl); }
+  .form__group { margin-bottom: var(--space-xl); }
+  .form__label { display: block; font-weight: 500; margin-bottom: var(--space-sm); font-size: var(--font-size-sm); }
+  .form__required { background: var(--color-accent-rose); color: var(--color-white); font-size: 0.7rem; padding: 2px 8px; border-radius: 50px; margin-left: var(--space-xs); }
+  .form__optional { background: var(--color-border); color: var(--color-text-light); font-size: 0.7rem; padding: 2px 8px; border-radius: 50px; margin-left: var(--space-xs); }
+  .form__input { width: 100%; padding: var(--space-md); border: 1px solid var(--color-border); border-radius: var(--border-radius); font-family: var(--font-body); font-size: var(--font-size-base); color: var(--color-text); background: var(--color-white); transition: border-color var(--transition), box-shadow var(--transition); appearance: none; }
+  .form__input:focus { outline: none; border-color: var(--color-primary); box-shadow: 0 0 0 3px rgba(183,132,167,0.15); }
+  .form__input::placeholder { color: var(--color-border); }
+  .form__textarea { resize: vertical; min-height: 150px; }
+  select.form__input { cursor: pointer; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237A7A7A' stroke-width='1.5' fill='none'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 16px center; padding-right: 40px; }
+  .form__submit { text-align: center; margin-top: var(--space-2xl); }
+  .form__submit .btn { min-width: 200px; }
+
+  .info-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-xl); margin-top: var(--space-2xl); }
+  .info-card { background: var(--color-bg-alt); border-radius: var(--border-radius-lg); padding: var(--space-xl); text-align: center; }
+  .info-card__title { font-family: var(--font-heading); font-size: var(--font-size-base); margin-bottom: var(--space-md); }
+  .info-card p { font-size: var(--font-size-sm); margin-bottom: var(--space-xs); }
+  .info-card a { color: var(--color-primary-dark); font-weight: 500; }
+  .info-note { color: var(--color-text-light) !important; }
+
+  /* レスポンシブ */
   @media (max-width: 768px) {
-    .features-grid,
-    .services-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .hide-sp {
-      display: none;
-    }
+    .features-grid { grid-template-columns: 1fr; }
+    .services-grid { grid-template-columns: 1fr; }
+    .profile { grid-template-columns: 1fr; text-align: center; }
+    .profile__text { text-align: left; }
+    .qualifications { grid-template-columns: repeat(2, 1fr); }
+    .info-grid { grid-template-columns: 1fr; }
+    .hero { padding: var(--space-3xl) 0; min-height: auto; }
   }
 </style>
