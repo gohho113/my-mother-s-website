@@ -173,6 +173,64 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
   </section>
 
+  <!-- 料金 -->
+  <section id="pricing" class="section">
+    <div class="container">
+      <h2 class="section-title text-center">料金</h2>
+      <hr class="rainbow-line" />
+      <p class="section-subtitle text-center">各メニューの料金のご案内</p>
+      <div class="pricing-table">
+        <div class="pricing-card">
+          <div class="pricing-card__header" style="background: var(--color-primary-light);">
+            <h3 class="pricing-card__name">カラーセラピー</h3>
+          </div>
+          <div class="pricing-card__body">
+            <div class="pricing-card__item">
+              <span class="pricing-card__label">セッション（約60分）</span>
+              <span class="pricing-card__price">¥3,000</span>
+            </div>
+            <div class="pricing-card__item">
+              <span class="pricing-card__label">ペアセッション（約90分）</span>
+              <span class="pricing-card__price">¥5,000</span>
+            </div>
+          </div>
+        </div>
+        <div class="pricing-card">
+          <div class="pricing-card__header" style="background: var(--color-secondary-light);">
+            <h3 class="pricing-card__name">心理カウンセリング</h3>
+          </div>
+          <div class="pricing-card__body">
+            <div class="pricing-card__item">
+              <span class="pricing-card__label">カウンセリング（約60分）</span>
+              <span class="pricing-card__price">¥3,000</span>
+            </div>
+            <div class="pricing-card__item">
+              <span class="pricing-card__label">オンライン（約60分）</span>
+              <span class="pricing-card__price">¥3,000</span>
+            </div>
+          </div>
+        </div>
+        <div class="pricing-card">
+          <div class="pricing-card__header" style="background: var(--color-accent-warm);">
+            <h3 class="pricing-card__name">ベビーキッズマッサージ</h3>
+          </div>
+          <div class="pricing-card__body">
+            <div class="pricing-card__item">
+              <span class="pricing-card__label">グループレッスン（約60分）</span>
+              <span class="pricing-card__price">¥2,000</span>
+            </div>
+            <div class="pricing-card__item">
+              <span class="pricing-card__label">プライベートレッスン（約60分）</span>
+              <span class="pricing-card__price">¥3,500</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="pricing-note text-center">※ 料金は全て税込みです。仮の金額のため、変更になる場合があります。</p>
+      <p class="pricing-note text-center">※ 出張の場合は別途交通費をいただく場合があります。</p>
+    </div>
+  </section>
+
   <!-- よくある質問 -->
   <section id="faq" class="section section--alt">
     <div class="container container--narrow">
@@ -453,6 +511,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .qualifications li { display: flex; align-items: center; gap: var(--space-md); padding: var(--space-md); background: var(--color-white); border-radius: var(--border-radius); box-shadow: var(--shadow-sm); font-weight: 500; font-size: var(--font-size-sm); }
   .qual__icon { font-size: 1.25rem; flex-shrink: 0; }
 
+  /* 料金 */
+  .pricing-table { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-xl); margin-top: var(--space-xl); }
+  .pricing-card { background: var(--color-white); border-radius: var(--border-radius-lg); overflow: hidden; box-shadow: var(--shadow-sm); transition: all var(--transition); }
+  .pricing-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+  .pricing-card__header { padding: var(--space-lg) var(--space-xl); text-align: center; }
+  .pricing-card__name { font-family: var(--font-heading); font-size: var(--font-size-lg); color: var(--color-white); font-weight: 700; }
+  .pricing-card__body { padding: var(--space-lg) var(--space-xl); }
+  .pricing-card__item { display: flex; justify-content: space-between; align-items: center; padding: var(--space-md) 0; border-bottom: 1px dashed var(--color-border); }
+  .pricing-card__item:last-child { border-bottom: none; }
+  .pricing-card__label { font-size: var(--font-size-sm); color: var(--color-text); }
+  .pricing-card__price { font-family: var(--font-heading); font-size: var(--font-size-lg); font-weight: 700; color: var(--color-primary-dark); white-space: nowrap; margin-left: var(--space-md); }
+  .pricing-note { margin-top: var(--space-md); color: var(--color-text-light); font-size: var(--font-size-sm); }
+
   /* お問い合わせ */
   .form { max-width: 600px; margin: 0 auto var(--space-3xl); }
   .form__group { margin-bottom: var(--space-xl); }
@@ -514,6 +585,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     /* 共通 */
     .section-title { font-size: var(--font-size-xl); }
     .section-subtitle { font-size: var(--font-size-base); }
+
+    /* 料金 */
+    .pricing-table { grid-template-columns: 1fr; }
 
     /* お問い合わせ */
     .info-grid { grid-template-columns: 1fr; }
