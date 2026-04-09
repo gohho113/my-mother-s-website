@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import SectionHeading from '../components/SectionHeading.astro';
 import ServiceCard from '../components/ServiceCard.astro';
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 ---
 
 <BaseLayout title="サービス紹介" description="カラーセラピー・心理カウンセリング・ベビーキッズマッサージなどのサービス紹介｜Mizuho Rainbow">
@@ -98,7 +99,7 @@ import ServiceCard from '../components/ServiceCard.astro';
     <div class="container text-center">
       <SectionHeading title="まずはお気軽にご相談ください" />
       <p class="cta-text">どのメニューが合うか分からない場合も、<br />お気軽にお問い合わせください。一緒に最適なメニューを考えましょう。</p>
-      <a href={`${import.meta.env.BASE_URL}contact/`} class="btn btn--primary">お問い合わせはこちら</a>
+      <a href={`${base}contact/`} class="btn btn--primary">お問い合わせはこちら</a>
     </div>
   </section>
 
