@@ -5,3 +5,4 @@ export default defineConfig({
   base: '/my-mother-s-website',
   output: 'static',
 });
+
