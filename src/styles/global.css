@@ -363,6 +363,16 @@ details[open] .faq-question::after {
   max-width: 540px;
   margin: 0 auto;
   min-height: 400px;
+  display: flex;
+  justify-content: center;
+}
+
+.instagram-embed iframe {
+  margin: 0 auto !important;
+}
+
+.instagram-embed .instagram-media {
+  margin: 0 auto !important;
 }
 
 /* ===========================
