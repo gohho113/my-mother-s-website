@@ -369,10 +369,13 @@ details[open] .faq-question::after {
 
 .instagram-embed iframe {
   margin: 0 auto !important;
+  max-width: 100% !important;
 }
 
 .instagram-embed .instagram-media {
   margin: 0 auto !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
 }
 
 /* ===========================
@@ -449,5 +452,24 @@ details[open] .faq-question::after {
   .line-float__icon {
     width: 28px;
     height: 28px;
+  }
+
+  .instagram-embed {
+    min-height: 300px;
+  }
+
+  .faq-question {
+    font-size: var(--font-size-sm);
+    padding: var(--space-md) var(--space-lg);
+    padding-right: 2.5rem;
+  }
+
+  .faq-question::after {
+    right: var(--space-md);
+  }
+
+  .faq-answer {
+    padding: 0 var(--space-lg) var(--space-md);
+    font-size: var(--font-size-sm);
   }
 }
